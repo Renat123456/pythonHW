@@ -62,7 +62,7 @@ def delete_line():
             if searched in data[i]:
                 print(f"№{i}\n{data[i]} \n\n")
         index = int(input('Введите номер контакта для удаления (введите -1, для отмены): '))
-        if index == -1:
+        if index == -1 or index not in range(0, len(data)):
             return
         data.pop(index)
     with open('book.txt', 'w', encoding='utf-8') as file:
@@ -77,7 +77,7 @@ def change_line():
             if searched in data[i]:
                 print(f"№{i}\n{data[i]} \n\n")
         index = int(input('Введите номер контакта для редактирования (введите -1, для отмены): '))
-        if index == -1:
+        if index == -1 or index not in range(0, len(data)):
             return
         name = enter_first_name()
         surname = enter_second_name()
